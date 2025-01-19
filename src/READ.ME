@@ -1,0 +1,39 @@
+/*---------------------------------------------------- New2Outlaws ---------------------------------------------------*/
+
+    - The code should work, but it might throw an exception in:
+                                        game.ManagerOfCharacters.login and game.ManagerOfCharacters.login
+    due to the relative path... In IntelliJ, it's not an issue, but eclipse might have troubles handling that.
+    So, when starting application in Eclipse:
+        right-click the main.class->Run as->Run Configurations...->Arguments->Working Directory
+
+        there set up the directory, which contains also database folder, where are located files:
+        passwords.txt and userNames.txt
+
+        Without this step, the application might be in infinite loop during log-in/register process. And well,
+    you are able to log-in directly with:
+                        Username: test
+                        Password: test
+    Or, you are able to create a new account during registration and set your own credentials.
+
+    Design patterns:
+
+    - Observer:
+        src\game\ObserverDP
+        - observes the budget state (checks the value)
+        - when the value is changed (method which affects budget is being executed) the notifyListeners is triggered
+        - value of the budget is then changed in GUI
+
+    - MVC design pattern:
+        src\MVC_pattern
+        - AppController represents the Controller, handles the communication, events and data flow from view to model and vice versa
+        - ViewGUI represents the View, handles the interaction with user, based on the interaction is also logic/data executed/affected
+        - src\game\ManagerOfCharacters represents the Model, handles data, logic and whole verification process
+
+    - Strategy design pattern:
+        src\game\StrategyDP
+        
+    
+    	Details and more can be found in documentation. Hope that the code is acceptable and also that the final
+    points will be satisfying.
+
+        Best regards, Šimon Vinkler, labs on Thursday 17:00
